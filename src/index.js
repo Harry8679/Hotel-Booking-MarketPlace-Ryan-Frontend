@@ -4,27 +4,16 @@ import './index.css';
 import App from './App';
 
 // 1. Import from react-redux and redux
-import { createStore, combineReducers } from 'redux';
+import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import { rootReducer } from './reducers';
 
 // 2. Create user reducer function
-const authReducer = (state = { name: 'Harry', role: 'seller'}, action) => {
-  // { type: 'LOGGED_IN_USER', payload: { name: 'Harry', role: 'Seller } }
-  switch(action.type) {
-    case 'LOGGED_IN_USER':
-      return { ...state, ...action.payload };
-    case 'LOGOUT':
-      return action.payload;
-    default:
-      return state;
-  }
-};
+
 
 // 3. combine multiple reducers
-const rootReducer = combineReducers({
-  user: authReducer
-});
+
 
 // 4. create redux syore
 const store = createStore(rootReducer, composeWithDevTools());
