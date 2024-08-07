@@ -1,8 +1,17 @@
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import Home from './booking/Home';
+import Login from './auth/Login';
+import Register from './auth/Register';
+
 const App = () => {
   return (
-    <div>
-      <h1>Hello World</h1>
-    </div>
+    <Router>
+      <Routes>
+        <Route element={<Home />} path='/' />
+        <Route element={<Login />} path='/login' />
+        <Route element={<Register />} path='/register' />
+      </Routes>
+    </Router>
   );
 }
 
