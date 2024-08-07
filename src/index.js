@@ -9,11 +9,11 @@ import { Provider } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 // 2. Create user reducer function
-const authReducer = (state = {}, action) => {
+const authReducer = (state = { name: 'Harry', role: 'seller'}, action) => {
   // { type: 'LOGGED_IN_USER', payload: { name: 'Harry', role: 'Seller } }
   switch(action.type) {
     case 'LOGGED_IN_USER':
-      return {...state, ...action.payload};
+      return { ...state, ...action.payload };
     case 'LOGOUT':
       return action.payload;
     default:
