@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Field from '../components/Field';
 
 const Register = () => {
   // const [name, setName] = useState('');
@@ -26,20 +27,14 @@ const Register = () => {
 
   const registerForm = () => {
     return <form onSubmit={handleSubmit} className='mt-3'>
-      <div className="form-group mb-3">
+      <Field type_label='name' text_label='Your Name' type='text' id='name' name='name' placeholder='Enter name' value={state.name} handleChange={handleChange}  />
+      <Field type_label='email' text_label='Your Email' type='email' id='email' name='email' placeholder='Enter email' value={state.email} handleChange={handleChange}  />
+      <Field type_label='password' text_label='Your Password' type='password' id='password' name='password' placeholder='Enter password' value={state.password} handleChange={handleChange}  />
+
+      {/* <div className="form-group mb-3">
         <label htmlFor="name" className='form-label'>Your Name</label>
         <input type="text" id='name' name='name' className='form-control' placeholder='Enter name' value={state.name} onChange={handleChange} />
-      </div>
-
-      <div className="form-group mb-3">
-        <label htmlFor="email" className='form-label'>Your Email</label>
-        <input type="email" id='email' name='email' className='form-control' placeholder='Enter email' onChange={handleChange} value={state.email} />
-      </div>
-
-      <div className="form-group mb-3">
-        <label htmlFor="password" className='form-label'>Your Password</label>
-        <input type="password" id='password' name='password' className='form-control' placeholder='Enter password' onChange={handleChange} value={state.password} />
-      </div>
+      </div> */}
 
       <button className='btn btn-primary'>Registration</button>
     </form>;
