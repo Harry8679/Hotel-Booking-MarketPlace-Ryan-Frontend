@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import Field from '../components/Field';
 import axios from 'axios';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
@@ -64,8 +63,6 @@ const Register = () => {
       <div className='container-fluid bg-secondary p-5 text-center'>
         <h1>Register</h1>
       </div>
-
-      <ToastContainer />
 
       <div className="container">
         <div className="row">
