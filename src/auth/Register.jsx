@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Field from '../components/Field';
+import axios from 'axios';
 
 const Register = () => {
 
@@ -9,10 +10,17 @@ const Register = () => {
     password: ''
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     const { name, email, password } = state;
     e.preventDefault();
-    console.table({ name, email, password });
+    try {
+      console.table({ name, email, password });
+      const res = await axios.post(`http://localhost:5500/api/v1/register`, { name, email, password });
+
+      console.log('REGISTER USER ===> ', res);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const handleChange = (e) => {
