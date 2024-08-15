@@ -18,7 +18,8 @@ const Register = () => {
     e.preventDefault();
     try {
       console.table({ name, email, password });
-      const res = await axios.post(`http://localhost:5500/api/v1/register`, { name, email, password });
+      const res = await axios.post(`${process.env.REACT_APP_API_URL}/register`, { name, email, password });
+      // const res = await axios.post(`${process.env.API_URL}/register`, { name, email, password });
 
       setState({
         name: '',
@@ -38,6 +39,8 @@ const Register = () => {
       toast.error(err.response.data);
     }
   };
+
+  // console.log(process.env.REACT_APP_API_URL);
 
   const handleChange = (e) => {
     setState({
