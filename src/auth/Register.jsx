@@ -56,7 +56,7 @@ const Register = () => {
         <Field type_label='email' text_label='Your Email' type='email' id='email' name='email' placeholder='Enter email' value={state.email} handleChange={handleChange} />
         <Field type_label='password' text_label='Your Password' type='password' id='password' name='password' placeholder='Enter password' value={state.password} handleChange={handleChange} />
 
-        <button className='btn btn-primary'>Registration</button>
+        <button className='btn btn-primary' disabled={!state.name || !state.email || !state.password}>Registration</button>
       </form>
     );
   };
